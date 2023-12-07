@@ -37,15 +37,6 @@ function switchCelsius() {
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", switchCelsius);
 
-/*function switchFahrenheit() {
-  let degreeChange = document.querySelector("#degree-change");
-  degreeChange.innerHTML = "61";
-}
-
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", switchFahrenheit);
-*/
-////
 function searchForm(event) {
   event.preventDefault();
 
@@ -55,6 +46,7 @@ function searchForm(event) {
   let newCity = cityInput.value;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${newCity}&key=6ao2b5e8b332b5tfbfa88bf024f90c65&units=metric`;
   let apiKey = "6ao2b5e8b332b5tfbfa88bf024f90c65";
+  searchForm(cityInput.value);
   function displayTemperature(response) {
     let degree = document.querySelector("#degree-change");
     let temperature = Math.round(response.data.temperature.current);
