@@ -46,11 +46,13 @@ function searchForm(event) {
   let newCity = cityInput.value;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${newCity}&key=6ao2b5e8b332b5tfbfa88bf024f90c65&units=metric`;
   let apiKey = "6ao2b5e8b332b5tfbfa88bf024f90c65";
-  searchForm(cityInput.value);
+  searchForm(newCity.value);
   function displayTemperature(response) {
     let degree = document.querySelector("#degree-change");
     let temperature = Math.round(response.data.temperature.current);
     degree.innerHTML = temperature;
+    let windSpeed = document.querySelector("#wind-speed");
+    windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
   }
   axios.get(apiUrl).then(displayTemperature);
 }
