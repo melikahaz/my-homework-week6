@@ -25,18 +25,6 @@ let now = new Date();
 let realDate = document.querySelector("#date");
 realDate.innerHTML = formatDate(now);
 
-//2
-
-//3
-
-function switchCelsius() {
-  let degreeChange = document.querySelector("#degree-change");
-  degreeChange.innerHTML = "16";
-}
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", switchCelsius);
-
 function searchForm(event) {
   event.preventDefault();
 
