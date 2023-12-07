@@ -41,6 +41,8 @@ function searchForm(event) {
     degree.innerHTML = temperature;
     let windSpeed = document.querySelector("#wind-speed");
     windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+    let humidityForm = document.querySelector("#humidity");
+    humidityForm.innerHTML = `${response.data.temperature.humidity}%`;
   }
   axios.get(apiUrl).then(displayTemperature);
 }
