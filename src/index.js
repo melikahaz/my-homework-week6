@@ -44,7 +44,10 @@ function searchForm(event) {
     let humidityForm = document.querySelector("#humidity");
     humidityForm.innerHTML = `${response.data.temperature.humidity}%`;
     let feelLike = document.querySelector("#feel-like");
+
     feelLike.innerHTML = `${response.data.temperature.feels_like}°C`;
+    let iconElement = document.querySelector("#icon");
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   }
   axios.get(apiUrl).then(displayTemperature);
 }
