@@ -44,7 +44,7 @@ function searchForm(event) {
     let humidityForm = document.querySelector("#humidity");
     humidityForm.innerHTML = `${response.data.temperature.humidity}%`;
     let feelLike = document.querySelector("#feel-like");
-    feelLike.innerHTML = `${response.data.temperature.feels - like}°C`;
+    feelLike.innerHTML = `${response.data.temperature.feels_like}°C`;
   }
   axios.get(apiUrl).then(displayTemperature);
 }
